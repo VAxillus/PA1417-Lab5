@@ -18,6 +18,17 @@ public class Game {
 
         return temp;
     }
+    private Frame[] copyFrames(Frame[] frames, int nrOfFrames) {
+        Frame[] temp = new Frame[nrOfFrames];
+
+        for (int i = 0; i < nrOfFrames; i++) {
+            temp[i] = new Frame(frames[i]);
+        }
+
+        return temp;
+    }
+
+
 
     private int calculateScore(int frame) {
         if (frame == 0) {
@@ -31,7 +42,7 @@ public class Game {
        boolean returnVal = false;
         if (nrOfFrames > 0 && nrOfFrames <= 10) {
             this.frames = null;
-            this.frames = frames;
+            this.frames = this.copyFrames(frames, nrOfFrames);
             this.nrOfFrames = nrOfFrames;
        }
        return returnVal;
