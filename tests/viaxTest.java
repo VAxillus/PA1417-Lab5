@@ -50,4 +50,9 @@ public class viaxTest {
         }
 
     }
+
+    @Test
+    public void GameTest() {
+        Game[] games = new Game[100];
+    }
 }
