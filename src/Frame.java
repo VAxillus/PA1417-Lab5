@@ -13,6 +13,13 @@ public class Frame {
         this.random = new Random();
     }
 
+    Frame(Frame toCopy) {
+        this.pins = toCopy.pins;
+        this.bThrows = Arrays.copyOf(toCopy.bThrows, 2);
+        this.random = toCopy.random;
+        this.played = toCopy.played;
+    }
+
     public int[] oneTurn() {
         for (int i = 0; i < 2; i++) {
             int randomNumber = random.nextInt(this.pins + 1 );
