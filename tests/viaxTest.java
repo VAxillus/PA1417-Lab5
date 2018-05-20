@@ -54,12 +54,21 @@ public class viaxTest {
 
     @Test
     public void GameTest() {
-        Game[] games = new Game[100];
-        for (int i = 0; i < 100; i++) {
+        Game[] games = new Game[10];
+        Frame[] frames = new Frame[10];
+        for (int i = 0; i < 10; i++) {
            games[i] = new Game();
 
            collector.checkThat("Testing that a game contains 10 frames",
                    games[i].getNrOfFrames(), equalTo(10));
+
+
+           frames = games[i].getFrames();
+
+           for (int j = 0; j < 10; j++) {
+               collector.checkThat("Testing that a game contains 10 frames",
+                       frames[j].getScore(), equalTo(-1));
+           }
 
         }
 
