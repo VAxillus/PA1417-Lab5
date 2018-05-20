@@ -34,6 +34,10 @@ public class Game {
         if (frame == 0) {
             return this.frames[frame].getScore();
         }
+        if (this.frames[frame].isStrike()) {
+            return this.frames[frame].getScore() + this.frames[frame - 1].getScore() +
+                    this.calculateScore(--frame);
+        }
         return this.frames[frame].getScore() + this.calculateScore(--frame);
     }
 
