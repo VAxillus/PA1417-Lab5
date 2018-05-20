@@ -19,6 +19,24 @@ public class Game {
         return temp;
     }
 
+    private int calculateScore(int frame) {
+        if (frame == 0) {
+            return this.frames[frame].getScore();
+        }
+        return this.frames[frame].getScore() + this.calculateScore(--frame);
+    }
+
+
+    public boolean setFrames(Frame[] frames, int nrOfFrames) {
+       boolean returnVal = false;
+        if (nrOfFrames > 0 && nrOfFrames <= 10) {
+            this.frames = null;
+            this.frames = frames;
+            this.nrOfFrames = nrOfFrames;
+       }
+       return returnVal;
+    }
+
 
     public int getNrOfFrames() {
         return this.nrOfFrames;
@@ -26,6 +44,10 @@ public class Game {
 
     public Frame[] getFrames() {
         return this.copyFrames();
+    }
+
+    public int getScore() {
+        return this.calculateScore(this.nrOfFrames - 1);
     }
 
 }

@@ -5,20 +5,6 @@ import static org.hamcrest.Matchers.*;
 
 public class viaxTest {
 
-    int nrOfFrames = 10;
-    Frame[] playedFrames = new Frame[this.nrOfFrames];
-
-    // Default score = 81
-    playedFrames[0] = new Frame(1, 5);
-    playedFrames[1] = new Frame(3, 6);
-    playedFrames[2] = new Frame(7, 2);
-    playedFrames[3] = new Frame(3, 6);
-    playedFrames[4] = new Frame(4, 4);
-    playedFrames[5] = new Frame(5, 3);
-    playedFrames[6] = new Frame(3, 3);
-    playedFrames[7] = new Frame(4, 5);
-    playedFrames[8] = new Frame(8, 1);
-    playedFrames[9] = new Frame(2, 6);
 
     @Rule
     public ErrorCollector collector = new ErrorCollector();
@@ -94,7 +80,23 @@ public class viaxTest {
     public void gameScoreTest() {
         Game game = new Game();
 
-        game.setFrames(this.playedFrames, this.nrOfFrames);
+        int nrOfFrames = 10;
+        Frame[] playedFrames = new Frame[nrOfFrames];
+
+        // Default score = 81
+        playedFrames[0] = new Frame(1, 5);
+        playedFrames[1] = new Frame(3, 6);
+        playedFrames[2] = new Frame(7, 2);
+        playedFrames[3] = new Frame(3, 6);
+        playedFrames[4] = new Frame(4, 4);
+        playedFrames[5] = new Frame(5, 3);
+        playedFrames[6] = new Frame(3, 3);
+        playedFrames[7] = new Frame(4, 5);
+        playedFrames[8] = new Frame(8, 1);
+        playedFrames[9] = new Frame(2, 6);
+
+
+        game.setFrames(playedFrames, nrOfFrames);
 
         collector.checkThat("Testing getScore for a game (should be 81)",
                 game.getScore(), equalTo(81));

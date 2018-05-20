@@ -11,6 +11,16 @@ public class Frame {
         this.pins = 10;
         this.bThrows = new int[2];
         this.random = new Random();
+        this.played = false;
+    }
+
+    Frame(int firstThrow, int secondThrow) {
+        this.pins = 10;
+        this.bThrows = new int[2];
+        this.bThrows[0] = firstThrow;
+        this.bThrows[1] = secondThrow;
+        this.random = new Random();
+        this.played = true;
     }
 
     Frame(Frame toCopy) {
