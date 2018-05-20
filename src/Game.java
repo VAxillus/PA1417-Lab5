@@ -40,7 +40,7 @@ public class Game {
 
     public boolean setFrames(Frame[] frames, int nrOfFrames) {
        boolean returnVal = false;
-        if (nrOfFrames > 0 && nrOfFrames <= 10) {
+        if (nrOfFrames > 0 && nrOfFrames <= 10 && frames != null) {
             this.frames = null;
             this.frames = this.copyFrames(frames, nrOfFrames);
             this.nrOfFrames = nrOfFrames;
