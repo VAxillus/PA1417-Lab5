@@ -1,6 +1,7 @@
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ErrorCollector;
+import java.util.ArrayList;
 import static org.hamcrest.Matchers.*;
 
 public class viaxTest {
@@ -54,5 +55,13 @@ public class viaxTest {
     @Test
     public void GameTest() {
         Game[] games = new Game[100];
+        for (int i = 0; i < 100; i++) {
+           games[i] = new Game();
+
+           collector.checkThat("Testing that a game contains 10 frames",
+                   games[i].getFrames(), equalTo(10));
+
+        }
+
     }
 }
