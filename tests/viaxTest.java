@@ -122,6 +122,13 @@ public class viaxTest {
 
         collector.checkThat("Testing getScore for a game (should be 81)",
                 game.getScore(), equalTo(81));
+
+        playedFrames = null;
+
+        collector.checkThat("Passing in a nullpointer to setFrames (should be false",
+                game.setFrames(playedFrames, 10), equalTo(false));
+
+
     }
 
 }
