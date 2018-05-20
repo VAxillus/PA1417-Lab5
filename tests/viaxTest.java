@@ -101,7 +101,27 @@ public class viaxTest {
         collector.checkThat("Testing getScore for a game (should be 81)",
                 game.getScore(), equalTo(81));
 
+        playedFrames[0] = new Frame(0, 0);
+        playedFrames[1] = new Frame(0, 0);
+        playedFrames[2] = new Frame(0, 0);
+        playedFrames[3] = new Frame(0, 0);
+        playedFrames[4] = new Frame(0, 0);
+        playedFrames[5] = new Frame(0, 0);
+        playedFrames[6] = new Frame(0, 0);
+        playedFrames[7] = new Frame(0, 0);
+        playedFrames[8] = new Frame(0, 0);
+        playedFrames[9] = new Frame(0, 0);
 
+        collector.checkThat("Testing getScore for a game (should be 81)",
+                game.getScore(), equalTo(81));
+
+        for (int i = 0; i < 10; i++) {
+            playedFrames[i] = new Frame();
+        }
+
+
+        collector.checkThat("Testing getScore for a game (should be 81)",
+                game.getScore(), equalTo(81));
     }
 
 }
