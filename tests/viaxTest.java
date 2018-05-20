@@ -59,7 +59,7 @@ public class viaxTest {
            games[i] = new Game();
 
            collector.checkThat("Testing that a game contains 10 frames",
-                   games[i].getFrames(), equalTo(10));
+                   games[i].getNrOfFrames(), equalTo(10));
 
         }
 
