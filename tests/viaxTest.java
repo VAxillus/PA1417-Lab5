@@ -155,6 +155,13 @@ public class viaxTest {
                 game.getScore(), equalTo(94));
 
 
+        playedFrames[5] = new Frame(0, 10);
+        game.setFrames(playedFrames, nrOfFrames);
+        collector.checkThat("Testing getScore for a game containing a strike (should be 104)",
+                game.getScore(), equalTo(104));
+
+
+
 
     }
 
