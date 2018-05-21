@@ -37,6 +37,9 @@ public class Game {
         if (this.frames[frame].isStrike()) {
             return this.frames[frame].getScore() + this.frames[frame - 1].getScore() +
                     this.calculateScore(--frame);
+        } else if (this.frames[frame].isSpare()) {
+            return this.frames[frame].getScore() + this.frames[frame - 1].spareExtraPoints() +
+                    this.calculateScore(--frame);
         }
         return this.frames[frame].getScore() + this.calculateScore(--frame);
     }
