@@ -39,4 +39,15 @@ public class maljTest {
                 game.getScore(), Matchers.equalTo(93));
     }
 
+    @Test
+    public void perfectGameTest() {
+
+        int[][] defaultFrames = {{10, 0}, {10, 0}, {10, 0}, {10, 0}, {10, 0}, {10, 0}, {10, 0}, {10, 0}, {10, 0}, {10, 0}, {10}, {10}};
+        int nrOfFrames = 12;
+        Game game = new Game(defaultFrames, nrOfFrames);
+
+        collector.checkThat("Testing for a game with perfect score (should be 300)",
+                game.getScore(), Matchers.equalTo(300));
+    }
+
 }
