@@ -1,28 +1,19 @@
 public class Game {
     int nrOfFrames;
     Frame[] frames;
-    Game() {
-        this.nrOfFrames = 10;
-        this.frames = new Frame[this.nrOfFrames];
-        for (int i = 0; i < 10; i++) {
-            this.frames[i] = new Frame();
-        }
-    }
 
-    private Frame[] copyFrames() {
-        Frame[] temp = new Frame[this.nrOfFrames];
+    Game() {this.nrOfFrames = -1; this.frames = null;};
+    Game(int[][] frames, int nrOfFrames) { this.setFrames(frames, nrOfFrames); };
 
-        for (int i = 0; i < this.nrOfFrames; i++) {
-            temp[i] = new Frame(this.frames[i]);
-        }
 
-        return temp;
-    }
-    private Frame[] copyFrames(Frame[] frames, int nrOfFrames) {
+    private Frame[] createFrames(int[][] frames, int nrOfFrames) {
         Frame[] temp = new Frame[nrOfFrames];
-
         for (int i = 0; i < nrOfFrames; i++) {
-            temp[i] = new Frame(frames[i]);
+            if (i <= 9) {
+                temp[i] = new Frame(frames[i][0], frames[i][1]);
+            } else {
+                temp[i] = new Frame(frames[i][0]);
+            }
         }
 
         return temp;
@@ -38,9 +29,7 @@ public class Game {
 
     private int calculateStrikeScore(int frame) {
         if (this.frames[frame + 1].isStrike()) {
-            return this.frames[frame].getScore() + this.frames[frame + 1].getExtraPoints() +
-                    this.frames[frame + 2].getScore();
-
+            return this.frames[frame].getScore() + this.frames[frame + 1].getExtraPoints() + this.frames[frame + 2].getScore();
         }
         return this.frames[frame].getScore() + this.frames[frame + 1].getScore();
     }
@@ -75,11 +64,11 @@ public class Game {
     }
 
 
-    public boolean setFrames(Frame[] frames, int nrOfFrames) {
+    public boolean setFrames(int[][] frames, int nrOfFrames) {
        boolean returnVal = false;
         if (nrOfFrames > 0 && nrOfFrames <= 12 && frames != null) {
             this.frames = null;
-            this.frames = this.copyFrames(frames, nrOfFrames);
+            this.frames = this.createFrames(frames, nrOfFrames);
             this.nrOfFrames = nrOfFrames;
 
        }
@@ -91,9 +80,6 @@ public class Game {
         return this.nrOfFrames;
     }
 
-    public Frame[] getFrames() {
-        return this.copyFrames();
-    }
 
     public int getScore() {
         return this.calculateScore(0);
