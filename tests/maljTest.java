@@ -28,5 +28,4 @@ public class maljTest {
         collector.checkThat("Testing getScore for a game containing a strike at the last frame (should be 122)",
                 game.getScore(), Matchers.equalTo(122));
     }
-    
 }

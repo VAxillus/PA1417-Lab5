@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd968d5e-488c-4319-b71c-14106c40f7d6" name="Default" comment="">
+    <list default="true" id="dd968d5e-488c-4319-b71c-14106c40f7d6" name="Default" comment="test case for user story 11">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/maljTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/maljTest.java" afterDir="false" />
     </list>
@@ -18,8 +18,8 @@
       <file leaf-file-name="maljTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/maljTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+            <state relative-caret-position="435">
+              <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -323,7 +323,7 @@
       <workItem from="1527013515552" duration="9346000" />
       <workItem from="1527023178293" duration="8000" />
       <workItem from="1527023372036" duration="655000" />
-      <workItem from="1527024570189" duration="1039000" />
+      <workItem from="1527024570189" duration="1159000" />
     </task>
     <task id="LOCAL-00001" summary="first test case user story 8">
       <created>1526966270667</created>
@@ -332,7 +332,14 @@
       <option name="project" value="LOCAL" />
       <updated>1526966270668</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="test case for user story 11">
+      <created>1527025638854</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1527025638855</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -368,7 +375,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33790000" />
+    <option name="totallyTimeSpent" value="33910000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
@@ -442,7 +449,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first test case user story 8" />
-    <option name="LAST_COMMIT_MESSAGE" value="first test case user story 8" />
+    <MESSAGE value="test case for user story 11" />
+    <option name="LAST_COMMIT_MESSAGE" value="test case for user story 11" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/tests/maljTest.java">
@@ -560,8 +568,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/maljTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+        <state relative-caret-position="435">
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
