@@ -35,6 +35,9 @@ public class Game {
             return this.frames[frame].getScore();
         }
         if (this.frames[frame].isStrike()) {
+            if(this.frames[frame - 1].isStrike()){
+                return this.frames[frame].getScore() + this.frames[frame - 1].getStrikesExtraPoints() + this.frames[frame - 2].getStrikesExtraPoints() + this.calculateScore(--frame);
+            }
             return this.frames[frame].getScore() + this.frames[frame - 1].getScore() +
                     this.calculateScore(--frame);
         } else if (this.frames[frame].isSpare()) {
