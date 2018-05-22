@@ -185,7 +185,7 @@ public class viaxTest {
 
         game.setFrames(playedFrames, nrOfFrames);
 
-        collector.checkThat("Testing getScore for a game containing a spare (should be 88)",
+        collector.checkThat("Testing getScore for a game containing a spare (should be 93)",
                 game.getScore(), equalTo(93));
 
 
@@ -211,7 +211,7 @@ public class viaxTest {
 
         game.setFrames(playedFrames, nrOfFrames);
 
-        collector.checkThat("Testing getScore for a gaming containing a strike followed by a spare",
+        collector.checkThat("Testing getScore for a game containing a strike followed by a spare (should be 103)",
                 game.getScore(), equalTo(103));
 
 
@@ -237,7 +237,7 @@ public class viaxTest {
 
         game.setFrames(playedFrames, nrOfFrames);
 
-        collector.checkThat("Testing getScore for a gaming containing a strike followed by a spare",
+        collector.checkThat("Testing getScore for a game containing multiple spares (should be 98)",
                 game.getScore(), equalTo(98));
 
 
@@ -264,7 +264,7 @@ public class viaxTest {
 
         game.setFrames(playedFrames, nrOfFrames);
 
-        collector.checkThat("Testing getScore for a gaming containing a strike followed by a spare",
+        collector.checkThat("Testing getScore for a game containing a spare in the last frame + a bonus throw (should be 90)",
                 game.getScore(), equalTo(90));
 
     }
