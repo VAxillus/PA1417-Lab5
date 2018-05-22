@@ -79,4 +79,5 @@ public class Frame {
     public int spareExtraPoints() {
         return this.bThrows[0];
     }
+    public int getStrikesExtraPoints() { return this.bThrows[0]; }
 }
