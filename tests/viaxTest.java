@@ -244,6 +244,32 @@ public class viaxTest {
     }
 
 
+    @Test
+    public void spareLastFrameTest() {
+        Game game = new Game();
+        int nrOfFrames = 11;
+        Frame[] playedFrames = new Frame[nrOfFrames];
+
+        playedFrames[0] = new Frame(1, 5);
+        playedFrames[1] = new Frame(3, 6);
+        playedFrames[2] = new Frame(7, 2);
+        playedFrames[3] = new Frame(3, 6);
+        playedFrames[4] = new Frame(4, 4);
+        playedFrames[5] = new Frame(5, 3);
+        playedFrames[6] = new Frame(3, 3);
+        playedFrames[7] = new Frame(4, 5);
+        playedFrames[8] = new Frame(8, 1);
+        playedFrames[9] = new Frame(2, 8);
+        playedFrames[10] = new Frame(7, 0);
+
+        game.setFrames(playedFrames, nrOfFrames);
+
+        collector.checkThat("Testing getScore for a gaming containing a strike followed by a spare",
+                game.getScore(), equalTo(90));
+
+    }
+
+
 
 
 }
