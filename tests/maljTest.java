@@ -15,16 +15,16 @@ public class maljTest {
         int nrOfFrames = 10;
         Frame[] playedFrames = new Frame[nrOfFrames];
 
-        playedFrames[0] = new Frame(2, 6);
-        playedFrames[1] = new Frame(3, 6);
-        playedFrames[2] = new Frame(7, 2);
-        playedFrames[3] = new Frame(3, 6);
-        playedFrames[4] = new Frame(5, 3);
-        playedFrames[5] = new Frame(5, 4);
-        playedFrames[6] = new Frame(10, 0);
-        playedFrames[7] = new Frame(10, 0);
-        playedFrames[8] = new Frame(8, 0);
-        playedFrames[9] = new Frame(8, 0);
+        playedFrames[9] = new Frame(2, 6);
+        playedFrames[8] = new Frame(3, 6);
+        playedFrames[7] = new Frame(7, 2);
+        playedFrames[6] = new Frame(3, 6);
+        playedFrames[5] = new Frame(5, 3);
+        playedFrames[4] = new Frame(5, 4);
+        playedFrames[3] = new Frame(10, 0);
+        playedFrames[2] = new Frame(10, 0);
+        playedFrames[1] = new Frame(8, 0);
+        playedFrames[0] = new Frame(8, 0);
 
         game.setFrames(playedFrames, nrOfFrames);
 

@@ -8,6 +8,7 @@ public class Frame {
     private boolean played;
     private boolean strike;
     private boolean spare;
+    private boolean bonusThrow;
 
     Frame() {
         this.pins = 10;
@@ -16,7 +17,24 @@ public class Frame {
         this.played = false;
         this.strike = false;
         this.spare = false;
+        this.bonusThrow = false;
     }
+    Frame(int bonusThrow) {
+        this.pins = 10;
+        this.bThrows = new int[2];
+        this.bThrows[0] = bonusThrow;
+        this.bThrows[1] = 0;
+        this.random = new Random();
+        this.played = true;
+        this.strike = false;
+        this.spare = false;
+        this.bonusThrow = true;
+        if (bonusThrow == 10) {
+            this.strike = true;
+        }
+
+    }
+
 
     Frame(int firstThrow, int secondThrow) {
         this.pins = 10;
@@ -27,6 +45,7 @@ public class Frame {
         this.played = true;
         this.strike = false;
         this.spare = false;
+        this.bonusThrow = false;
         if (firstThrow == 10) {
             this.strike = true;
         } else if ((firstThrow + secondThrow == 10) && (this.strike == false)) {
@@ -41,6 +60,7 @@ public class Frame {
         this.played = toCopy.played;
         this.strike = toCopy.strike;
         this.spare = toCopy.spare;
+        this.bonusThrow = toCopy.bonusThrow;
     }
 
     public int[] oneTurn() {
@@ -76,8 +96,8 @@ public class Frame {
         return this.spare;
     }
 
-    public int spareExtraPoints() {
+
+    public int getExtraPoints() {
         return this.bThrows[0];
     }
-    public int getStrikesExtraPoints() { return this.bThrows[0]; }
 }

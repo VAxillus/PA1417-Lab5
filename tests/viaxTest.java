@@ -138,8 +138,7 @@ public class viaxTest {
         Frame[] playedFrames = new Frame[nrOfFrames];
 
         // Default score = 81
-        playedFrames[0] = new Frame(2, 6);
-        playedFrames[1] = new Frame(3, 6);
+        playedFrames[0] = new Frame(10, 0);
         playedFrames[2] = new Frame(7, 2);
         playedFrames[3] = new Frame(3, 6);
         playedFrames[4] = new Frame(4, 4);
@@ -147,20 +146,13 @@ public class viaxTest {
         playedFrames[6] = new Frame(3, 3);
         playedFrames[7] = new Frame(4, 5);
         playedFrames[8] = new Frame(8, 1);
-        playedFrames[9] = new Frame(10, 0);
+        playedFrames[9] = new Frame(2, 6);
+        playedFrames[1] = new Frame(3, 6);
 
         game.setFrames(playedFrames, nrOfFrames);
 
         collector.checkThat("Testing getScore for a game containing a strike (should be 94)",
                 game.getScore(), equalTo(94));
-
-
-        playedFrames[5] = new Frame(0, 10);
-        game.setFrames(playedFrames, nrOfFrames);
-        collector.checkThat("Testing getScore for a game containing a strike (should be 104)",
-                game.getScore(), equalTo(100));
-
-
 
 
     }
@@ -172,7 +164,7 @@ public class viaxTest {
         int nrOfFrames = 10;
         Frame[] playedFrames = new Frame[nrOfFrames];
 
-        playedFrames[0] = new Frame(2, 6);
+        playedFrames[0] = new Frame(1, 9);
         playedFrames[1] = new Frame(3, 6);
         playedFrames[2] = new Frame(7, 2);
         playedFrames[3] = new Frame(3, 6);
@@ -181,12 +173,12 @@ public class viaxTest {
         playedFrames[6] = new Frame(3, 3);
         playedFrames[7] = new Frame(4, 5);
         playedFrames[8] = new Frame(8, 1);
-        playedFrames[9] = new Frame(1, 9);
+        playedFrames[9] = new Frame(2, 6);
 
         game.setFrames(playedFrames, nrOfFrames);
 
         collector.checkThat("Testing getScore for a game containing a spare (should be 88)",
-                game.getScore(), equalTo(93));
+                game.getScore(), equalTo(88));
 
 
     }
@@ -198,26 +190,77 @@ public class viaxTest {
         int nrOfFrames = 10;
         Frame[] playedFrames = new Frame[nrOfFrames];
 
-        playedFrames[9] = new Frame(10, 0);
-        playedFrames[8] = new Frame(4, 6);
-        playedFrames[7] = new Frame(7, 2);
-        playedFrames[6] = new Frame(3, 6);
-        playedFrames[5] = new Frame(4, 4);
-        playedFrames[4] = new Frame(5, 3);
-        playedFrames[3] = new Frame(3, 3);
-        playedFrames[2] = new Frame(4, 5);
-        playedFrames[1] = new Frame(8, 1);
-        playedFrames[0] = new Frame(2, 6);
+        playedFrames[0] = new Frame(10, 0);
+        playedFrames[1] = new Frame(4, 6);
+        playedFrames[2] = new Frame(7, 2);
+        playedFrames[3] = new Frame(3, 6);
+        playedFrames[4] = new Frame(4, 4);
+        playedFrames[5] = new Frame(5, 3);
+        playedFrames[6] = new Frame(3, 3);
+        playedFrames[7] = new Frame(4, 5);
+        playedFrames[8] = new Frame(8, 1);
+        playedFrames[9] = new Frame(2, 6);
 
         game.setFrames(playedFrames, nrOfFrames);
 
-        collector.checkThat("Testing getScore for a gaming containing a strike followed by a spare",
+        collector.checkThat("Testing getScore for a game containing a strike followed by a spare (should be 103)",
                 game.getScore(), equalTo(103));
 
 
 
 
     }
+    @Test
+    public void mulitpleSpareTest() {
+        Game game = new Game();
+        int nrOfFrames = 10;
+        Frame[] playedFrames = new Frame[nrOfFrames];
+
+        playedFrames[0] = new Frame(8, 2);
+        playedFrames[1] = new Frame(5, 5);
+        playedFrames[2] = new Frame(7, 2);
+        playedFrames[3] = new Frame(3, 6);
+        playedFrames[4] = new Frame(4, 4);
+        playedFrames[5] = new Frame(5, 3);
+        playedFrames[6] = new Frame(3, 3);
+        playedFrames[7] = new Frame(4, 5);
+        playedFrames[8] = new Frame(8, 1);
+        playedFrames[9] = new Frame(2, 6);
+
+        game.setFrames(playedFrames, nrOfFrames);
+
+        collector.checkThat("Testing getScore for a game containing multiple spares (should be 98)",
+                game.getScore(), equalTo(98));
+
+
+    }
+
+
+    @Test
+    public void spareLastFrameTest() {
+        Game game = new Game();
+        int nrOfFrames = 11;
+        Frame[] playedFrames = new Frame[nrOfFrames];
+
+        playedFrames[0] = new Frame(1, 5);
+        playedFrames[1] = new Frame(3, 6);
+        playedFrames[2] = new Frame(7, 2);
+        playedFrames[3] = new Frame(3, 6);
+        playedFrames[4] = new Frame(4, 4);
+        playedFrames[5] = new Frame(5, 3);
+        playedFrames[6] = new Frame(3, 3);
+        playedFrames[7] = new Frame(4, 5);
+        playedFrames[8] = new Frame(8, 1);
+        playedFrames[9] = new Frame(2, 8);
+        playedFrames[10] = new Frame(7);
+
+        game.setFrames(playedFrames, nrOfFrames);
+
+        collector.checkThat("Testing getScore for a game containing a spare in the last frame + a bonus throw (should be 90)",
+                game.getScore(), equalTo(90));
+
+    }
+
 
 
 
