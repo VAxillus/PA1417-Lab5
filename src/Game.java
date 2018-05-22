@@ -36,25 +36,41 @@ public class Game {
         return bonus;
     }
 
+    private int calculateStrikeScore(int frame) {
+        if (this.frames[frame + 1].isStrike()) {
+            return this.frames[frame].getScore() + this.frames[frame + 1].getExtraPoints() +
+                    this.frames[frame + 2].getScore();
+
+        }
+        return this.frames[frame].getScore() + this.frames[frame + 1].getScore();
+    }
+
+    private int calculateSpareScore(int frame) {
+        return this.frames[frame].getScore() + this.frames[frame + 1].getExtraPoints();
+    }
+
+
+    private int calculateBonusScore(int frame) {
+        return this.frames[frame].getScore() + this.frames[frame + 1].getScore();
+    }
+
+
 
 
     private int calculateScore(int frame) {
         if (isBonusThrow(frame)) {
-           return this.frames[frame].getScore() + this.frames[frame + 1].getScore();
+           return this.calculateBonusScore(frame);
         }
         if (frame == (this.nrOfFrames - 1)) {
             return this.frames[frame].getScore();
         }
         if (this.frames[frame].isStrike()) {
-            if(this.frames[frame + 1].isStrike()){
-                return this.frames[frame].getScore() + this.frames[frame + 1].getExtraPoints() + this.frames[frame - 2].getExtraPoints() + this.calculateScore(++frame);
-            }
-            return this.frames[frame].getScore() + this.frames[frame + 1].getScore() +
-                    this.calculateScore(++frame);
+            return this.calculateStrikeScore(frame) + this.calculateScore(++frame);
+
         } else if (this.frames[frame].isSpare()) {
-            return this.frames[frame].getScore() + this.frames[frame + 1].getExtraPoints() +
-                    this.calculateScore(++frame);
+            return this.calculateSpareScore(frame) + this.calculateScore(++frame);
         }
+
         return this.frames[frame].getScore() + this.calculateScore(++frame);
     }
 
