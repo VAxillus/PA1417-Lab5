@@ -50,4 +50,14 @@ public class maljTest {
                 game.getScore(), Matchers.equalTo(300));
     }
 
+    @Test
+    public void realGameTest() {
+
+        int[][] defaultFrames = {{6, 3}, {7, 1}, {8, 2}, {7, 2}, {10, 0}, {6, 2}, {7, 3}, {10, 0}, {8, 0}, {7, 3}, {10}};
+        int nrOfFrames = 11;
+        Game game = new Game(defaultFrames, nrOfFrames);
+
+        collector.checkThat("Testing for a real game (should be 135)",
+                game.getScore(), Matchers.equalTo(135));
+    }
 }
