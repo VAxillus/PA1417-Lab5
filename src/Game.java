@@ -31,20 +31,20 @@ public class Game {
 
 
     private int calculateScore(int frame) {
-        if (frame == 0) {
+        if (frame == (this.nrOfFrames - 1)) {
             return this.frames[frame].getScore();
         }
         if (this.frames[frame].isStrike()) {
-            if(this.frames[frame - 1].isStrike()){
-                return this.frames[frame].getScore() + this.frames[frame - 1].getStrikesExtraPoints() + this.frames[frame - 2].getStrikesExtraPoints() + this.calculateScore(--frame);
+            if(this.frames[frame + 1].isStrike()){
+                return this.frames[frame].getScore() + this.frames[frame + 1].getStrikesExtraPoints() + this.frames[frame - 2].getStrikesExtraPoints() + this.calculateScore(++frame);
             }
-            return this.frames[frame].getScore() + this.frames[frame - 1].getScore() +
-                    this.calculateScore(--frame);
+            return this.frames[frame].getScore() + this.frames[frame + 1].getScore() +
+                    this.calculateScore(++frame);
         } else if (this.frames[frame].isSpare()) {
-            return this.frames[frame].getScore() + this.frames[frame - 1].spareExtraPoints() +
-                    this.calculateScore(--frame);
+            return this.frames[frame].getScore() + this.frames[frame + 1].spareExtraPoints() +
+                    this.calculateScore(++frame);
         }
-        return this.frames[frame].getScore() + this.calculateScore(--frame);
+        return this.frames[frame].getScore() + this.calculateScore(++frame);
     }
 
 
@@ -68,7 +68,7 @@ public class Game {
     }
 
     public int getScore() {
-        return this.calculateScore(this.nrOfFrames - 1);
+        return this.calculateScore(0);
     }
 
 }
