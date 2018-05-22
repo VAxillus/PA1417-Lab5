@@ -28,4 +28,15 @@ public class maljTest {
         collector.checkThat("Testing getScore for a game containing a strike at the last frame (should be 122)",
                 game.getScore(), Matchers.equalTo(122));
     }
+    @Test
+    public void bonusStrikeTest() {
+
+        int[][] defaultFrames = {{1, 5}, {3, 6}, {7, 2}, {3, 6}, {4, 4}, {5, 3}, {3, 3}, {4, 5}, {8, 1}, {2, 8}, {10}};
+        int nrOfFrames = 11;
+        Game game = new Game(defaultFrames, nrOfFrames);
+
+        collector.checkThat("Testing getScore for a game containing a bonus strike at the last frame (should be 93)",
+                game.getScore(), Matchers.equalTo(93));
+    }
+
 }
