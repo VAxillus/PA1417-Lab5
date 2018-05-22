@@ -1,0 +1,38 @@
+1ed3199,NoJohns,3 minutes ago,updated readme
+8ddd4a4,NoJohns,4 minutes ago,added marcus tests and added a bonus check on createFrames()
+4c0afb0,NoJohns,4 hours ago,Refactored a lot of code and rewrote the tests to make them more readable
+1e68dbd,NoJohns,5 hours ago,refactored calculateScore
+859bf77,VAxillus,6 hours ago,Merge pull request #2 from VAxillus/vaxillus-userStory9
+0027876,NoJohns,6 hours ago,small fix
+2ef4e5c,VAxillus,6 hours ago,Merge pull request #1 from VAxillus/vaxillus-userStory9
+b2e38b0,NoJohns,6 hours ago,minimal solution for the first test case (user story 10)
+299e444,NoJohns,14 hours ago,forgot to rewrite one test
+69a6b4c,NoJohns,14 hours ago,rewrote calculate score to count from element 0 and upwards instead of the last element and downwards, changed all tests accordingly
+b046c9d,NoJohns,14 hours ago,Merge branch 'master' of github.com:VAxillus/PA1417-Lab5 into vaxillus-userStory9
+cabd7ed,Marcuslju,15 hours ago,fixed user story 8
+ed1240a,NoJohns,15 hours ago,corrected some misspelled comments
+2c3a1ca,NoJohns,15 hours ago,first test for user story 10
+9bfb943,NoJohns,15 hours ago,first test for user story 9 (it is passed)
+ab5c7d5,Marcuslju,16 hours ago,first test case user story 8
+728323d,NoJohns,25 hours ago,wrote first test for user story 7 (it is passed)
+07ca9fa,NoJohns,25 hours ago,Realized the redundant test wasn't redundant and that the scoring 10 points on a second throw is a spare and not a strike, updated the code accordingly. Also implemented minimal solution for test case 1 (user story 6)
+ae25707,NoJohns,27 hours ago,first test case for user story 6
+f3b149c,NoJohns,27 hours ago,redundant test for user story 5
+4083b30,NoJohns,2 days ago,minimal solution for the first test case (user story 5)
+b36a177,NoJohns,2 days ago,first test case for user story 5
+d1463eb,NoJohns,2 days ago,minimal solution for the third test case (user story 4)
+f4fa365,NoJohns,2 days ago,third test case for user story 4
+a88c727,NoJohns,2 days ago,minimal solution for the second test case (user story 4)
+b768584,NoJohns,2 days ago,second test case for user story 4
+ff7b43a,NoJohns,2 days ago,minimal solution for the first test case (user story 4)
+3e7cbc9,NoJohns,2 days ago,first test case for user story 4
+a45188c,NoJohns,2 days ago,minimal solution for the third test case
+5ba87cb,NoJohns,2 days ago,third test case for user story 3 and reduced of loop iterations
+f6a2b23,NoJohns,2 days ago,minimal solution for the second test case
+cc943e1,NoJohns,2 days ago,clarified function name
+6b3a8fb,NoJohns,2 days ago,second test case for user story 3
+eb06203,NoJohns,2 days ago,minimal solution for the first test case
+8a7aca0,NoJohns,2 days ago,first test case for user story 3
+80659c7,NoJohns,2 days ago,implemented the first two user stories (forgot to commit after each step)
+88d74bc,NoJohns,3 days ago,project setup
+663a522,NoJohns,5 days ago,first commit
