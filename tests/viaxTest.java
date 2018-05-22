@@ -252,7 +252,7 @@ public class viaxTest {
         playedFrames[7] = new Frame(4, 5);
         playedFrames[8] = new Frame(8, 1);
         playedFrames[9] = new Frame(2, 8);
-        playedFrames[10] = new Frame(7, 0);
+        playedFrames[10] = new Frame(7);
 
         game.setFrames(playedFrames, nrOfFrames);
 

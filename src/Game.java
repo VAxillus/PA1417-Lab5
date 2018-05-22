@@ -28,20 +28,31 @@ public class Game {
         return temp;
     }
 
+    private boolean isBonusThrow(int frame) {
+        boolean bonus = false;
+        if ((frame == (9)) && (this.frames[frame].isSpare() || this.frames[frame].isStrike())) {
+           bonus = true;
+        }
+        return bonus;
+    }
+
 
 
     private int calculateScore(int frame) {
+        if (isBonusThrow(frame)) {
+           return this.frames[frame].getScore() + this.frames[frame + 1].getExtraPoints();
+        }
         if (frame == (this.nrOfFrames - 1)) {
             return this.frames[frame].getScore();
         }
         if (this.frames[frame].isStrike()) {
             if(this.frames[frame + 1].isStrike()){
-                return this.frames[frame].getScore() + this.frames[frame + 1].getStrikesExtraPoints() + this.frames[frame - 2].getStrikesExtraPoints() + this.calculateScore(++frame);
+                return this.frames[frame].getScore() + this.frames[frame + 1].getExtraPoints() + this.frames[frame - 2].getExtraPoints() + this.calculateScore(++frame);
             }
             return this.frames[frame].getScore() + this.frames[frame + 1].getScore() +
                     this.calculateScore(++frame);
         } else if (this.frames[frame].isSpare()) {
-            return this.frames[frame].getScore() + this.frames[frame + 1].spareExtraPoints() +
+            return this.frames[frame].getScore() + this.frames[frame + 1].getExtraPoints() +
                     this.calculateScore(++frame);
         }
         return this.frames[frame].getScore() + this.calculateScore(++frame);
@@ -50,10 +61,11 @@ public class Game {
 
     public boolean setFrames(Frame[] frames, int nrOfFrames) {
        boolean returnVal = false;
-        if (nrOfFrames > 0 && nrOfFrames <= 10 && frames != null) {
+        if (nrOfFrames > 0 && nrOfFrames <= 12 && frames != null) {
             this.frames = null;
             this.frames = this.copyFrames(frames, nrOfFrames);
             this.nrOfFrames = nrOfFrames;
+
        }
        return returnVal;
     }
