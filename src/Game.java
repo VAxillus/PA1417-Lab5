@@ -2,17 +2,22 @@ public class Game {
     int nrOfFrames;
     Frame[] frames;
 
-    Game() {this.nrOfFrames = -1; this.frames = null;};
-    Game(int[][] frames, int nrOfFrames) { this.setFrames(frames, nrOfFrames); };
+    Game() {this.nrOfFrames = -1; this.frames = null;}
+    Game(int[][] frames, int nrOfFrames) { this.setFrames(frames, nrOfFrames, 0); }
 
 
-    private Frame[] createFrames(int[][] frames, int nrOfFrames) {
+    private Frame[] createFrames(int[][] frames, int nrOfFrames, int bonus) {
         Frame[] temp = new Frame[nrOfFrames];
         for (int i = 0; i < nrOfFrames; i++) {
             if (i <= 9) {
                 temp[i] = new Frame(frames[i][0], frames[i][1]);
             } else {
-                temp[i] = new Frame(frames[i][0]);
+                if (bonus == 1) {
+                    temp[i] = new Frame(frames[i][0]);
+                } else if (bonus == 2) {
+                    temp[i] = new Frame(frames[i][0], frames[i][1]);
+                }
+
             }
         }
 
@@ -29,7 +34,8 @@ public class Game {
 
     private int calculateStrikeScore(int frame) {
         if (this.frames[frame + 1].isStrike()) {
-            return this.frames[frame].getScore() + this.frames[frame + 1].getExtraPoints() + this.frames[frame + 2].getScore();
+            return this.frames[frame].getScore() + this.frames[frame + 1].getExtraPoints() + this.frames[frame + 2].getExtraPoints();
+
         }
         return this.frames[frame].getScore() + this.frames[frame + 1].getScore();
     }
@@ -64,11 +70,11 @@ public class Game {
     }
 
 
-    public boolean setFrames(int[][] frames, int nrOfFrames) {
+    public boolean setFrames(int[][] frames, int nrOfFrames, int bonus) {
        boolean returnVal = false;
         if (nrOfFrames > 0 && nrOfFrames <= 12 && frames != null) {
             this.frames = null;
-            this.frames = this.createFrames(frames, nrOfFrames);
+            this.frames = this.createFrames(frames, nrOfFrames, bonus);
             this.nrOfFrames = nrOfFrames;
 
        }
@@ -84,5 +90,6 @@ public class Game {
     public int getScore() {
         return this.calculateScore(0);
     }
+
 
 }
