@@ -8,33 +8,25 @@ import static org.hamcrest.core.IsEqual.equalTo;
 public class maljTest {
     @Rule
     public ErrorCollector collector = new ErrorCollector();
-/*
+
     @Test
     public void multipleStrikesTest() {
-        Game game = new Game();
+        int[][] defaultFrames = {{8, 0}, {8, 0}, {10, 0}, {10, 0}, {5, 4}, {5, 3}, {3, 6}, {7, 2}, {3, 6}, {2, 6}};
         int nrOfFrames = 10;
-        Frame[] playedFrames = new Frame[nrOfFrames];
+        Game game = new Game(defaultFrames, nrOfFrames);
 
-        playedFrames[9] = new Frame(2, 6);
-        playedFrames[8] = new Frame(3, 6);
-        playedFrames[7] = new Frame(7, 2);
-        playedFrames[6] = new Frame(3, 6);
-        playedFrames[5] = new Frame(5, 3);
-        playedFrames[4] = new Frame(5, 4);
-        playedFrames[3] = new Frame(10, 0);
-        playedFrames[2] = new Frame(10, 0);
-        playedFrames[1] = new Frame(8, 0);
-        playedFrames[0] = new Frame(8, 0);
-
-        game.setFrames(playedFrames, nrOfFrames);
-
-        collector.checkThat("Testing getScore for a game containing a strike (should be 112)",
+        collector.checkThat("Testing getScore for a game containing a multiple strike (should be 112)",
                 game.getScore(), Matchers.equalTo(112));
-
-
-        // checks the frames for sequential strikes
-
-
     }
-*/
+
+    @Test
+    public void lastFrameStrikeTest() {
+        int[][] defaultFrames = {{8, 0}, {8, 0}, {10, 0}, {10, 0}, {5, 4}, {5, 3}, {3, 6}, {7, 2}, {3, 6}, {10, 0}, {4}, {4}};
+        int nrOfFrames = 12;
+        Game game = new Game(defaultFrames, nrOfFrames);
+
+        collector.checkThat("Testing getScore for a game containing a strike at the last frame (should be 122)",
+                game.getScore(), Matchers.equalTo(122));
+    }
+    
 }
