@@ -40,7 +40,7 @@ public class Game {
 
     private int calculateScore(int frame) {
         if (isBonusThrow(frame)) {
-           return this.frames[frame].getScore() + this.frames[frame + 1].getExtraPoints();
+           return this.frames[frame].getScore() + this.frames[frame + 1].getScore();
         }
         if (frame == (this.nrOfFrames - 1)) {
             return this.frames[frame].getScore();
